@@ -1,0 +1,1 @@
+awk '{print $1}' ~/data/genbank-data/gene2pubmed | sort -n | uniq -c > ~/data/genbank-data/taxid-counts

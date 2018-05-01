@@ -1,1 +1,5 @@
 awk '{print $1}' ~/data/genbank-data/gene2pubmed | sort -n | uniq -c > ~/data/genbank-data/taxid-counts
+
+### Gene descriptions
+
+python scripts/gene_info_by_id.py -f ~/data/genbank-data/hg19/gene_ids.txt | tee output/gene_descriptions_hg19.txt

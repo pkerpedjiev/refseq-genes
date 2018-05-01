@@ -3,3 +3,11 @@ awk '{print $1}' ~/data/genbank-data/gene2pubmed | sort -n | uniq -c > ~/data/ge
 ### Gene descriptions
 
 python scripts/gene_info_by_id.py -f ~/data/genbank-data/hg19/gene_ids.txt | tee output/gene_descriptions_hg19.txt
+
+### Get housekeeping genes
+
+http://www.tau.ac.il/~elieis/HKG/HK_genes.txt
+
+### 
+
+awk '{ print $3 "\t" $2 }' ~/data/genbank-data/hg19/gene_info | sort > ~/data/genbank-data/hg19/gene_name_id.tsv
